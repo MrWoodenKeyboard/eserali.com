@@ -329,24 +329,302 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* Top hearts */
 .container::before {
-  content: "💖 💕 💗 💖 💕";
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
   position: absolute;
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
   animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
 }
 
+/* Bottom hearts */
 .container::after {
-  content: "💕 💗 💖 💕 💗";
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
   position: absolute;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
   animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Left side hearts */
+.container {
+  position: relative;
+}
+
+.container:hover::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+}
+
+/* Add left and right side hearts using box-shadow technique */
+.container {
+  position: relative;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #ffb6d5;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Create side hearts using additional elements */
+.container {
+  position: relative;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #ffb6d5;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Left side hearts */
+h1::before {
+  content: "💖 ";
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+h1::after {
+  content: " 💖";
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Add side hearts using the h1 positioning */
+h1 {
+  position: relative;
+}
+
+h1::before {
+  content: "💖 ";
+  animation: heartbeat 1.5s ease-in-out infinite;
+  position: relative;
+}
+
+h1::after {
+  content: " 💖";
+  animation: heartbeat 1.5s ease-in-out infinite;
+  position: relative;
+}
+
+/* Create wrapper hearts around the entire container */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #ffb6d5;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Side hearts using absolute positioning */
+.container {
+  position: relative;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #ffb6d5;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Left side hearts */
+.container {
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #ffb6d5;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: "💖 💕 💗 💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: nowrap;
+}
+
+/* Add side hearts using body pseudo-elements targeting the container area */
+body {
+  position: relative;
+}
+
+body::before {
+  content: "💖\A💕\A💗\A💖\A💕\A💗\A💖";
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: pre;
+  line-height: 2;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+body::after {
+  content: "💕\A💗\A💖\A💕\A💗\A💖\A💕";
+  position: absolute;
+  right: calc(50% - 250px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: pre;
+  line-height: 2;
+  z-index: 1;
+  opacity: 0.8;
 }
 
 @keyframes pulse {
