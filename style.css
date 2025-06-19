@@ -6,28 +6,57 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #ffe0ec 0%, #ffb6d5 100%);
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
   position: relative;
   overflow: hidden;
 }
 
 body::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   pointer-events: none;
   background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><text x="0" y="16" font-size="16" fill="%23ff69b4" opacity="0.25">❤</text></svg>');
   background-repeat: repeat;
-  background-size: 20px 20px;
+  background-size: 15px 15px;
   opacity: 0.3;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"><text x="5" y="20" font-size="20" fill="%23ff1493" opacity="0.4">💖</text></svg>'),
+    url('data:image/svg+xml;utf8,<svg width="25" height="25" xmlns="http://www.w3.org/2000/svg"><text x="2" y="18" font-size="16" fill="%23ff69b4" opacity="0.3">💕</text></svg>'),
+    url('data:image/svg+xml;utf8,<svg width="35" height="35" xmlns="http://www.w3.org/2000/svg"><text x="8" y="25" font-size="24" fill="%23ff1493" opacity="0.2">💗</text></svg>');
+  background-position: 0 0, 15px 15px, 30px 30px;
+  background-size: 60px 60px, 45px 45px, 70px 70px;
+  animation: floatHearts 20s linear infinite;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
 }
 
 .container {
   background: rgba(255, 255, 255, 0.95);
   padding: 2.5rem 2rem;
   border-radius: 1.2rem;
-  box-shadow: 0 4px 24px rgba(255,105,180,0.12);
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.12);
   max-width: 420px;
   text-align: center;
   position: relative;
@@ -35,10 +64,62 @@ body::before {
   border: 2px solid #ffb6d5;
 }
 
+.container::before {
+  content: "💖 💕 💗 💖 💕";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.container::after {
+  content: "💕 💗 💖 💕 💗";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
 h1 {
   font-size: 2rem;
   margin-bottom: 1.2rem;
   color: #d72660;
+}
+
+h1::before {
+  content: "💖 ";
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+h1::after {
+  content: " 💖";
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .apology {
@@ -53,4 +134,4 @@ h1 {
   color: #ff69b4;
   margin-top: 1.5rem;
   font-style: italic;
-} 
+}
