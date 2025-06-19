@@ -11,6 +11,69 @@ body {
   overflow: hidden;
 }
 
+.heart-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart-column {
+  position: absolute;
+  top: -100px;
+  font-size: 1.5rem;
+  opacity: 0.4;
+  animation: heartFall linear infinite;
+  color: #ff69b4;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.heart-column:nth-child(odd) {
+  opacity: 0.6;
+  font-size: 1.8rem;
+  color: #ff1493;
+}
+
+.heart-column:nth-child(3n) {
+  opacity: 0.3;
+  font-size: 1.2rem;
+  color: #ff69b4;
+}
+
+.heart-column:nth-child(4n) {
+  opacity: 0.5;
+  font-size: 2rem;
+  color: #ff1493;
+  text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
+}
+
+.heart-column:nth-child(5n) {
+  opacity: 0.7;
+  font-size: 1.6rem;
+  color: #ff69b4;
+  animation-direction: reverse;
+}
+
+@keyframes heartFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 .container {
   background: rgba(255, 255, 255, 0.95);
   padding: 2.5rem 2rem;
@@ -44,6 +107,38 @@ body {
   font-size: 1.2rem;
   animation: pulse 2s ease-in-out infinite reverse;
   white-space: nowrap;
+}
+
+/* Left side vertical hearts */
+body::before {
+  content: "💖\A💕\A💗\A💖\A💕\A💗\A💖\A💕\A💗";
+  position: absolute;
+  left: calc(50% - 280px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+  white-space: pre;
+  line-height: 2.5;
+  z-index: 1;
+  opacity: 0.8;
+  color: #ff69b4;
+}
+
+/* Right side vertical hearts */
+body::after {
+  content: "💕\A💗\A💖\A💕\A💗\A💖\A💕\A💗\A💖";
+  position: absolute;
+  right: calc(50% - 280px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite reverse;
+  white-space: pre;
+  line-height: 2.5;
+  z-index: 1;
+  opacity: 0.8;
+  color: #ff69b4;
 }
 
 @keyframes pulse {
